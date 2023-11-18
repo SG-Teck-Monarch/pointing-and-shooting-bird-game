@@ -105,7 +105,7 @@ collisionCanvas.width = window.innerWidth;
 collisionCanvas.height = window.innerHeight;
 
 function gameStart() {
-  startScreen.querySelector("#play-btn").addEventListener("click", () => {
+  startScreen.querySelector("#play-btn").onclick = () => {
     setTimeout(() => {
       collisionCanvas.classList.remove("hidden");
       canvas.classList.remove("hidden");
@@ -113,14 +113,14 @@ function gameStart() {
 
       gamePlayMode();
     }, 400);
-  });
+  };
   collisionCanvas.classList.add("hidden");
   canvas.classList.add("hidden");
   endScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
 }
 function displayGameOver(score) {
-  endScreen.querySelector("#play-btn").addEventListener("click", () => {
+  endScreen.querySelector("#play-btn").onclick = () => {
     setTimeout(() => {
       collisionCanvas.classList.remove("hidden");
       canvas.classList.remove("hidden");
@@ -128,7 +128,7 @@ function displayGameOver(score) {
 
       gamePlayMode();
     }, 400);
-  });
+  };
   endScreen.querySelector("#score").textContent = score;
   collisionCanvas.classList.add("hidden");
   canvas.classList.add("hidden");
@@ -143,7 +143,7 @@ function gamePlayMode() {
   let timeToMakeRaven = 0;
   let ravenInterval = 850;
   let ravensSpeedModifier = 4;
-  const gameDifficultyIncreaseRate = 10;
+  const gameDifficultyIncreaseRate = 5;
   let gameLevelTimeCounter = 0;
 
   let lastTime = 0;
@@ -241,7 +241,7 @@ function gamePlayMode() {
       this.y = y;
       this.frame = 0;
       this.sound = new Audio(assetsManager.getSound("blast").src);
-      this.sound.volume = 0.3;
+      this.sound.volume = 0.7;
       this.timeSinceLastFrame = 0;
       this.frameInterval = 150;
       this.markedForDeletion = false;
@@ -315,7 +315,7 @@ function gamePlayMode() {
       gameLevelTimeCounter = 0;
 
       ravenInterval -= gameDifficultyIncreaseRate;
-      ravensSpeedModifier += 2;
+      ravensSpeedModifier += 1;
     } else {
       gameLevelTimeCounter += deltaTime;
     }
