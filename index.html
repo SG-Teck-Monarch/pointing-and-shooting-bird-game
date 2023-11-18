@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascirpt Game</title>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <canvas id="collision_canvas" willReadFrequently></canvas>
-    <canvas id="main_canvas"></canvas>
+    <section id="startScreen" class="gameScreen hidden">
+      <div class="emogi">😈</div>
+      <h1>The Ravens Shooter</h1>
+      <p>
+        You have to shoot the ravens by touching or clicking them and each time
+        you do that, it adds up to your score.
+      </p>
+      <p id="wish-player">Goodluck!</p>
+      <button id="play-btn">Play</button>
+    </section>
+
+    <canvas id="collision_canvas" class="hidden" willReadFrequently></canvas>
+    <canvas id="main_canvas" class="hidden" willReadFrequently></canvas>
+
+    <section id="endScreen" class="gameScreen hidden">
+      <h1>Opp's 😅 you missed a raven</h1>
+      <p>Score: <span id="score"></span></p>
+      <button id="play-btn">&#128260;Replay</button>
+    </section>
 
     <script src="/script.js"></script>
   </body>

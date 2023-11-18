@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Vina+Sans&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -27,4 +29,80 @@ body {
 
 #collision_canvas {
   opacity: 0;
+}
+
+.gameScreen {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.gameScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 10px;
+}
+
+#startScreen .emogi {
+  font-size: 3rem;
+}
+
+.gameScreen h1 {
+  font-family: "Vina Sans", sans-serif;
+  font-size: 3.5rem;
+
+  color: skyblue;
+
+  margin-bottom: 25px;
+
+  text-align: center;
+}
+
+.gameScreen p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+
+  color: white;
+
+  text-align: center;
+}
+
+.gameScreen #play-btn {
+  font-size: 2rem;
+
+  padding: 10px;
+
+  margin-top: 15px;
+
+  width: 50vw;
+
+  color: white;
+  background-color: rgb(30, 224, 104);
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.gameScreen #play-btn:active {
+  transform: scale(80%);
+}
+
+#endScreen h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+
+  font-size: 2rem;
+
+  color: rgb(240, 65, 65);
+}
+
+.hidden {
+  display: none !important;
 }
